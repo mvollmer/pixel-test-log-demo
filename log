@@ -1,0 +1,367 @@
+https://logs.cockpit-project.org/logs/pull-435-20210318-141250-ad510f02-fedora-33/log.html
+Running on: `1-cockpit-11`
+Command: `PRIORITY=0005 ./make-checkout --verbose --repo=cockpit-project/starter-kit --rebase=pixel-testing-experiment ad510f026de6ab1c130327b52c382d431e419074 && cd make-checkout-workdir && TEST_OS=fedora-33 BASE_BRANCH=pixel-testing-experiment COCKPIT_BOTS_REF=master ../tests-invoke --pull-number 435 --revision ad510f026de6ab1c130327b52c382d431e419074 --repo cockpit-project/starter-kit`
++ shift
++ true
++ case "${1:-}" in
++ shift
++ REPO=cockpit-project/starter-kit
++ shift
++ true
++ case "${1:-}" in
++ shift
++ REBASE=pixel-testing-experiment
++ shift
++ true
++ case "${1:-}" in
++ shift
++ break
++ '[' 1 -gt 2 ']'
++ '[' 1 -lt 1 ']'
++ '[' -z cockpit-project/starter-kit ']'
++ REF=ad510f026de6ab1c130327b52c382d431e419074
++ REV=FETCH_HEAD
++ TARGET_DIR=make-checkout-workdir
++ '[' -e make-checkout-workdir ']'
++ chmod -R u+w make-checkout-workdir
++ rm -rf make-checkout-workdir
++ git clone https://github.com/cockpit-project/starter-kit make-checkout-workdir
+Cloning into 'make-checkout-workdir'...
++ cd make-checkout-workdir
++ git fetch origin ad510f026de6ab1c130327b52c382d431e419074
+From https://github.com/cockpit-project/starter-kit
+ * branch            ad510f026de6ab1c130327b52c382d431e419074 -> FETCH_HEAD
++ git checkout --detach FETCH_HEAD
+HEAD is now at ad510f0 Alert is now a warning
++ '[' -n pixel-testing-experiment ']'
++ git fetch origin pixel-testing-experiment
+From https://github.com/cockpit-project/starter-kit
+ * branch            pixel-testing-experiment -> FETCH_HEAD
+++ git rev-parse origin/pixel-testing-experiment
++ SHA=a00c3dffdf5a3fb0d766463763ade42c5a199300
++ echo 'Rebasing onto origin/pixel-testing-experiment a00c3dffdf5a3fb0d766463763ade42c5a199300 ...'
+Rebasing onto origin/pixel-testing-experiment a00c3dffdf5a3fb0d766463763ade42c5a199300 ...
++ git rebase origin/pixel-testing-experiment
+HEAD is up to date.
+# if it exists already, npm install won't update it; force that so that we always get up-to-date packages
+rm -f package-lock.json
+# unset NODE_ENV, skips devDependencies otherwise
+env -u NODE_ENV npm install
+npm WARN deprecated babel-eslint@10.1.0: babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.
+npm WARN deprecated eslint-loader@4.0.2: This loader has been deprecated. Please use eslint-webpack-plugin
+npm WARN deprecated popper.js@1.16.1: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
+npm WARN deprecated core-js@2.6.12: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+
+> core-js@2.6.12 postinstall /work/bots/make-checkout-workdir/node_modules/attr-accept/node_modules/core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+[96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+
+[96mThe project needs your help! Please consider supporting of core-js on Open Collective or Patreon: [0m
+[96m>[94m https://opencollective.com/core-js [0m
+[96m>[94m https://www.patreon.com/zloirock [0m
+
+[96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+
+
+> core-js@3.9.1 postinstall /work/bots/make-checkout-workdir/node_modules/core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.3.1 (node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/watchpack-chokidar2/node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN po2json@1.0.0-beta-3 requires a peer of commander@^6.0.0 but none is installed. You must install peer dependencies yourself.
+
+added 1003 packages from 404 contributors and audited 1005 packages in 22.71s
+
+81 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+env -u NODE_ENV npm prune
+npm WARN po2json@1.0.0-beta-3 requires a peer of commander@^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.3.2 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules/watchpack-chokidar2/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+audited 1005 packages in 4.862s
+
+81 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+flock Makefile sh -ec '\
+    git fetch --depth=1 https://github.com/cockpit-project/cockpit.git 238; \
+    git checkout --force FETCH_HEAD -- pkg/lib; \
+    git reset -- pkg/lib'
+From https://github.com/cockpit-project/cockpit
+ * tag               238        -> FETCH_HEAD
+mv pkg/lib src/ && rmdir -p pkg
+NODE_ENV=production npm run build
+
+> starter-kit@ build /work/bots/make-checkout-workdir
+> webpack
+
+sassc: [NA]
+libsass: 3.6.4
+sass2scss: 1.1.1
+sass: 3.5
+sed -e 's/%{VERSION}/1/g' cockpit-starter-kit.spec.in > cockpit-starter-kit.spec
+if type appstream-util >/dev/null 2>&1; then appstream-util validate-relax --nonet *.metainfo.xml; fi
+org.cockpit-project.starter-kit.metainfo.xml: OK
+mv node_modules node_modules.release
+touch -r package.json package-lock.json
+touch dist/*
+tar czf cockpit-starter-kit-1.tar.gz --transform 's,^,cockpit-starter-kit/,' \
+	--exclude cockpit-starter-kit.spec.in \
+	$(git ls-files) src/lib/cockpit-po-plugin.js src/lib/patternfly/*.scss package-lock.json cockpit-starter-kit.spec dist/
+mv node_modules.release node_modules
+mkdir -p "`pwd`/output"
+mkdir -p "`pwd`/rpmbuild"
+rpmbuild -bb \
+  --define "_sourcedir `pwd`" \
+  --define "_specdir `pwd`" \
+  --define "_builddir `pwd`/rpmbuild" \
+  --define "_srcrpmdir `pwd`" \
+  --define "_rpmdir `pwd`/output" \
+  --define "_buildrootdir `pwd`/build" \
+  cockpit-starter-kit.spec
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.jpbP43
++ umask 022
++ cd /work/bots/make-checkout-workdir/rpmbuild
++ cd /work/bots/make-checkout-workdir/rpmbuild
++ rm -rf cockpit-starter-kit
++ /usr/bin/gzip -dc /work/bots/make-checkout-workdir/cockpit-starter-kit-1.tar.gz
++ /usr/bin/tar -xvvof -
+-rw-r--r-- user/user       680 2021-03-18 14:12 cockpit-starter-kit/.cirrus.yml
+drwxr-xr-x                  Creating directory: cockpit-starter-kit
+-rw-r--r-- user/user        15 2021-03-18 14:12 cockpit-starter-kit/.eslintignore
+-rw-r--r-- user/user      1764 2021-03-18 14:12 cockpit-starter-kit/.eslintrc.json
+-rw-r--r-- user/user         2 2021-03-18 14:12 cockpit-starter-kit/.fmf/version
+drwxr-xr-x                  Creating directory: cockpit-starter-kit/.fmf
+-rw-r--r-- user/user      4956 2021-03-18 14:12 cockpit-starter-kit/.github/workflows/livetest.yml.disabled
+drwxr-xr-x                  Creating directory: cockpit-starter-kit/.github
+drwxr-xr-x                  Creating directory: cockpit-starter-kit/.github/workflows
+-rw-r--r-- user/user       725 2021-03-18 14:12 cockpit-starter-kit/.github/workflows/npm-update.yml
+-rw-r--r-- user/user      1593 2021-03-18 14:12 cockpit-starter-kit/.github/workflows/release.yml.disabled
+-rw-r--r-- user/user       150 2021-03-18 14:12 cockpit-starter-kit/.gitignore
+-rw-r--r-- user/user     26530 2021-03-18 14:12 cockpit-starter-kit/LICENSE
+-rw-r--r-- user/user      6502 2021-03-18 14:12 cockpit-starter-kit/Makefile
+-rw-r--r-- user/user      5934 2021-03-18 14:12 cockpit-starter-kit/README.md
+-rw-r--r-- user/user      1406 2021-03-18 14:12 cockpit-starter-kit/cockpituous-release
+-rw-r--r-- user/user       450 2021-03-18 14:12 cockpit-starter-kit/org.cockpit-project.starter-kit.metainfo.xml
+-rw-r--r-- user/user      1714 2021-03-18 14:12 cockpit-starter-kit/package.json
+-rw-r--r-- user/user       884 2021-03-18 14:12 cockpit-starter-kit/packit.yaml
+-rw-r--r-- user/user        72 2021-03-18 14:12 cockpit-starter-kit/plans/all.fmf
+drwxr-xr-x                  Creating directory: cockpit-starter-kit/plans
+-rw-r--r-- user/user       720 2021-03-18 14:12 cockpit-starter-kit/po/de.po
+drwxr-xr-x                  Creating directory: cockpit-starter-kit/po
+-rwxr-xr-x user/user      7059 2021-03-18 14:12 cockpit-starter-kit/po/html2po
+-rwxr-xr-x user/user      4857 2021-03-18 14:12 cockpit-starter-kit/po/manifest2po
+-rw-r--r-- user/user      1546 2021-03-18 14:12 cockpit-starter-kit/src/app.jsx
+drwxr-xr-x                  Creating directory: cockpit-starter-kit/src
+-rw-r--r-- user/user        29 2021-03-18 14:12 cockpit-starter-kit/src/app.scss
+-rw-r--r-- user/user      1213 2021-03-18 14:12 cockpit-starter-kit/src/index.html
+-rw-r--r-- user/user      1536 2021-03-18 14:12 cockpit-starter-kit/src/index.js
+-rw-r--r-- user/user       140 2021-03-18 14:12 cockpit-starter-kit/src/manifest.json
+-rwxr-xr-x user/user      1658 2021-03-18 14:12 cockpit-starter-kit/test/browser/browser.sh
+drwxr-xr-x                  Creating directory: cockpit-starter-kit/test
+drwxr-xr-x                  Creating directory: cockpit-starter-kit/test/browser
+-rw-r--r-- user/user       212 2021-03-18 14:12 cockpit-starter-kit/test/browser/main.fmf
+-rwxr-xr-x user/user       622 2021-03-18 14:12 cockpit-starter-kit/test/browser/run-test.sh
+-rwxr-xr-x user/user      2696 2021-03-18 14:12 cockpit-starter-kit/test/check-application
+-rw-r--r-- user/user      5515 2021-03-18 14:12 cockpit-starter-kit/test/reference/TestApplication-testBasic-gastgebername-pixels.png
+drwxr-xr-x                  Creating directory: cockpit-starter-kit/test/reference
+-rw-r--r-- user/user      4869 2021-03-18 14:12 cockpit-starter-kit/test/reference/TestApplication-testBasic-hostname-pixels.png
+-rwxr-xr-x user/user       250 2021-03-18 14:12 cockpit-starter-kit/test/run
+-rw-r--r-- user/user       374 2021-03-18 14:12 cockpit-starter-kit/test/vm.install
+-rw-r--r-- user/user      4665 2021-03-18 14:12 cockpit-starter-kit/webpack.config.js
+-rw-r--r-- user/user      3917 2021-03-18 14:13 cockpit-starter-kit/src/lib/cockpit-po-plugin.js
+drwxr-xr-x                  Creating directory: cockpit-starter-kit/src/lib
+-rw-r--r-- user/user      1398 2021-03-18 14:13 cockpit-starter-kit/src/lib/patternfly/_fonts.scss
+drwxr-xr-x                  Creating directory: cockpit-starter-kit/src/lib/patternfly
+-rw-r--r-- user/user       510 2021-03-18 14:13 cockpit-starter-kit/src/lib/patternfly/patternfly-4-cockpit.scss
+-rw-r--r-- user/user      2078 2021-03-18 14:13 cockpit-starter-kit/src/lib/patternfly/patternfly-4-overrides.scss
+-rw-r--r-- user/user       257 2021-03-18 14:13 cockpit-starter-kit/src/lib/patternfly/patternfly-cockpit.scss
+-rw-r--r-- user/user      2516 2021-03-18 14:13 cockpit-starter-kit/src/lib/patternfly/patternfly-overrides-variables.scss
+-rw-r--r-- user/user     16876 2021-03-18 14:13 cockpit-starter-kit/src/lib/patternfly/patternfly-overrides.scss
+-rw-r--r-- user/user    420559 2021-03-18 14:12 cockpit-starter-kit/package-lock.json
+-rw-r--r-- user/user       672 2021-03-18 14:13 cockpit-starter-kit/cockpit-starter-kit.spec
+drwxr-xr-x user/user         0 2021-03-18 14:13 cockpit-starter-kit/dist/
+-rw-r--r-- user/user       140 2021-03-18 14:13 cockpit-starter-kit/dist/manifest.json
+-rw-r--r-- user/user       790 2021-03-18 14:13 cockpit-starter-kit/dist/index.js.LICENSE.txt
+-rw-r--r-- user/user   1145767 2021-03-18 14:13 cockpit-starter-kit/dist/index.js.map
+-rw-r--r-- user/user       678 2021-03-18 14:13 cockpit-starter-kit/dist/index.html.gz
+-rw-r--r-- user/user      7894 2021-03-18 14:13 cockpit-starter-kit/dist/index.css.gz
+-rw-r--r-- user/user     92894 2021-03-18 14:13 cockpit-starter-kit/dist/index.js.gz
+-rw-r--r-- user/user       335 2021-03-18 14:13 cockpit-starter-kit/dist/po.de.js
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd cockpit-starter-kit
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.JCEJu1
++ umask 022
++ cd /work/bots/make-checkout-workdir/rpmbuild
++ '[' /work/bots/make-checkout-workdir/build/cockpit-starter-kit-1-1.fc33.x86_64 '!=' / ']'
++ rm -rf /work/bots/make-checkout-workdir/build/cockpit-starter-kit-1-1.fc33.x86_64
+++ dirname /work/bots/make-checkout-workdir/build/cockpit-starter-kit-1-1.fc33.x86_64
++ mkdir -p /work/bots/make-checkout-workdir/build
++ mkdir /work/bots/make-checkout-workdir/build/cockpit-starter-kit-1-1.fc33.x86_64
++ cd cockpit-starter-kit
++ /usr/bin/make install DESTDIR=/work/bots/make-checkout-workdir/build/cockpit-starter-kit-1-1.fc33.x86_64 'INSTALL=/usr/bin/install -p'
+make[1]: Entering directory '/work/bots/make-checkout-workdir/rpmbuild/cockpit-starter-kit'
+error: Unable to open cockpit-starter-kit.spec.in: No such file or directory
+error: query of specfile cockpit-starter-kit.spec.in failed, can't parse
+error: Unable to open cockpit-starter-kit.spec.in: No such file or directory
+error: query of specfile cockpit-starter-kit.spec.in failed, can't parse
+error: Unable to open cockpit-starter-kit.spec.in: No such file or directory
+error: query of specfile cockpit-starter-kit.spec.in failed, can't parse
+mkdir -p /work/bots/make-checkout-workdir/build/cockpit-starter-kit-1-1.fc33.x86_64/usr/share/cockpit/starter-kit
+cp -r dist/* /work/bots/make-checkout-workdir/build/cockpit-starter-kit-1-1.fc33.x86_64/usr/share/cockpit/starter-kit
+mkdir -p /work/bots/make-checkout-workdir/build/cockpit-starter-kit-1-1.fc33.x86_64/usr/share/metainfo/
+cp org.cockpit-project.starter-kit.metainfo.xml /work/bots/make-checkout-workdir/build/cockpit-starter-kit-1-1.fc33.x86_64/usr/share/metainfo/
+make[1]: Leaving directory '/work/bots/make-checkout-workdir/rpmbuild/cockpit-starter-kit'
++ appstream-util validate-relax --nonet /work/bots/make-checkout-workdir/build/cockpit-starter-kit-1-1.fc33.x86_64//usr/share/metainfo/org.cockpit-project.starter-kit.metainfo.xml
+/work/bots/make-checkout-workdir/build/cockpit-starter-kit-1-1.fc33.x86_64//usr/share/metainfo/org.cockpit-project.starter-kit.metainfo.xml: OK
++ find /work/bots/make-checkout-workdir/build/cockpit-starter-kit-1-1.fc33.x86_64/usr/share/cockpit/ -name '*.map'
++ xargs rm --verbose
+removed '/work/bots/make-checkout-workdir/build/cockpit-starter-kit-1-1.fc33.x86_64/usr/share/cockpit/starter-kit/index.js.map'
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-ldconfig
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/brp-strip /usr/bin/strip
++ /usr/lib/rpm/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
++ /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0
++ /usr/lib/rpm/brp-python-hardlink
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
+Processing files: cockpit-starter-kit-1-1.fc33.noarch
+Provides: cockpit-starter-kit = 1-1.fc33 metainfo() metainfo(org.cockpit-project.starter-kit.metainfo.xml)
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /work/bots/make-checkout-workdir/build/cockpit-starter-kit-1-1.fc33.x86_64
+Wrote: /work/bots/make-checkout-workdir/output/noarch/cockpit-starter-kit-1-1.fc33.noarch.rpm
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.6LYgn0
++ umask 022
++ cd /work/bots/make-checkout-workdir/rpmbuild
++ cd cockpit-starter-kit
++ /usr/bin/rm -rf /work/bots/make-checkout-workdir/build/cockpit-starter-kit-1-1.fc33.x86_64
++ RPM_EC=0
+++ jobs -p
++ exit 0
+find `pwd`/output -name '*.rpm' -printf '%f\n' -exec mv {} . \;
+cockpit-starter-kit-1-1.fc33.noarch.rpm
+rm -r "`pwd`/rpmbuild"
+rm -r "`pwd`/output" "`pwd`/build"
+# sanity check
+test -e "cockpit-starter-kit-1-1.fc33.noarch.rpm"
+git clone --quiet --reference-if-able ${XDG_CACHE_HOME:-$HOME/.cache}/cockpit-project/bots https://github.com/cockpit-project/bots.git
+info: Could not add alternate for '/work/.cache/cockpit-project/bots': path '/work/.cache/cockpit-project/bots' does not exist
+if [ -n "$COCKPIT_BOTS_REF" ]; then git -C bots fetch --quiet --depth=1 origin "$COCKPIT_BOTS_REF"; git -C bots checkout --quiet FETCH_HEAD; fi
+checked out bots/ ref 52eb452b7acab280df2354b283237ac3b059198e
+rm -f /work/bots/make-checkout-workdir/test/images/fedora-33 /work/bots/make-checkout-workdir/test/images/fedora-33.qcow2
+bots/image-customize -v -i cockpit-ws -i `pwd`/cockpit-starter-kit-1-1.fc33.noarch.rpm -s /work/bots/make-checkout-workdir/test/vm.install fedora-33
++ ! test -f /run/nologin && cat /proc/sys/kernel/random/boot_id
+638bf1cc-ce66-4b93-a51c-c816ec97b33c
++ which dnf || which yum || which apt-get
+/usr/bin/dnf
+Uploading /work/bots/make-checkout-workdir/cockpit-starter-kit-1-1.fc33.noarch.rpm
+scp -B -r -p -P 2201 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o BatchMode=yes -o ControlPath=/tmp/.cockpit-test-resources/ssh-%h-%p-%r-1670 /work/bots/make-checkout-workdir/cockpit-starter-kit-1-1.fc33.noarch.rpm root@[127.0.0.2]:/var/tmp/cockpit-starter-kit-1-1.fc33.noarch.rpm
++ dnf install -y cockpit-ws /var/tmp/cockpit-starter-kit-1-1.fc33.noarch.rpm
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered to Red Hat Subscription Management. You can use subscription-manager to register.
+
+Fedora 33 openh264 (From Cisco) - x86_64        3.2 kB/s | 2.5 kB     00:00    
+Fedora Modular 33 - x86_64                      4.9 MB/s | 3.3 MB     00:00    
+Fedora Modular 33 - x86_64 - Updates            4.3 MB/s | 3.1 MB     00:00    
+Fedora 33 - x86_64 - Updates                     18 MB/s |  25 MB     00:01    
+Fedora 33 - x86_64                              2.4 MB/s |  72 MB     00:30    
+Package cockpit-ws-238.1-1.fc33.x86_64 is already installed.
+Dependencies resolved.
+================================================================================
+ Package                   Architecture Version        Repository          Size
+================================================================================
+Installing:
+ cockpit-starter-kit       noarch       1-1.fc33       @commandline       108 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total size: 108 k
+Installed size: 101 k
+Downloading Packages:
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Installing       : cockpit-starter-kit-1-1.fc33.noarch                    1/1 
+  Verifying        : cockpit-starter-kit-1-1.fc33.noarch                    1/1 
+Installed products updated.
+
+Installed:
+  cockpit-starter-kit-1-1.fc33.noarch                                           
+
+Complete!
+Uploading /work/bots/make-checkout-workdir/test/vm.install
+scp -B -r -p -P 2201 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o BatchMode=yes -o ControlPath=/tmp/.cockpit-test-resources/ssh-%h-%p-%r-1670 /work/bots/make-checkout-workdir/test/vm.install root@[127.0.0.2]:/var/tmp/vm.install
++ chmod a+x /var/tmp/vm.install
++ /var/tmp/vm.install
+success
+Created symlink /etc/systemd/system/sockets.target.wants/cockpit.socket -> /usr/lib/systemd/system/cockpit.socket.
+killing ssh master process 1773
+flock Makefile sh -ec '\
+    git fetch --depth=1 https://github.com/cockpit-project/cockpit.git pull/15479/head; \
+    git checkout --force FETCH_HEAD -- test/common; \
+    git reset test/common'
+From https://github.com/cockpit-project/cockpit
+ * branch            refs/pull/15479/head -> FETCH_HEAD
+TEST_AUDIT_NO_SELINUX=1 test/common/run-tests
+1..1
+qemu-img create -q -f qcow2 -o backing_file=/work/bots/make-checkout-workdir/test/images/fedora-33,backing_fmt=qcow2 /tmp/ymjn3rcw.qcow2
+qemu-img create -q -f qcow2 -o backing_file=/work/bots/make-checkout-workdir/test/images/fedora-33,backing_fmt=qcow2 /tmp/ju20g2su.qcow2
+# ----------------------------------------------------------------------
+# testBasic (__main__.TestApplication)
+/usr/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+[0318/141549.282532:ERROR:bus.cc(393)] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+
+DevTools listening on ws://127.0.0.1:10171/devtools/browser/60e3ac5e-b448-4850-9581-d0a351a9d180
+CDP: {"source":"security","level":"error","text":"Refused to apply inline style because it violates the following Content Security Policy directive: \"default-src 'self' http://127.0.0.2:9191\". Either the 'unsafe-inline' keyword, a hash ('sha256-BMIkowAqVEI88ibUJ1NtYB8ByZOuS4MTi73eGoFo2+Q='), or a nonce ('nonce-...') is required to enable inline execution. Note also that 'style-src' was not explicitly set, so 'default-src' is used as a fallback.\n","timestamp":1616076951417.126,"url":"http://127.0.0.2:9191/cockpit/$1412e186e2cf2ae185961bb86a5b10f32b768d0afa96de22f62c80b99fb5868d/shell/index.js","lineNumber":24,"stackTrace":{"callFrames":[{"functionName":"Ee","scriptId":"21","url":"http://127.0.0.2:9191/cockpit/$1412e186e2cf2ae185961bb86a5b10f32b768d0afa96de22f62c80b99fb5868d/shell/index.js","lineNumber":24,"columnNumber":35353},{"functionName":"$e","scriptId":"21","url":"http://127.0.0.2:9191/cockpit/$1412e186e2cf2ae185961bb86a5b10f32b768d0afa96de22f62c80b99fb5868d/shell/index.js","lineNumber":24,"columnNumber":44390},{"functionName":"append","scriptId":"21","url":"http://127.0.0.2:9191/cockpit/$1412e186e2cf2ae185961bb86a5b10f32b768d0afa96de22f62c80b99fb5868d/shell/index.js","lineNumber":24,"columnNumber":46071},{"functionName":"P","scriptId":"21","url":"http://127.0.0.2:9191/cockpit/$1412e186e2cf2ae185961bb86a5b10f32b768d0afa96de22f62c80b99fb5868d/shell/index.js","lineNumber":63,"columnNumber":66643},{"functionName":"","scriptId":"21","url":"http://127.0.0.2:9191/cockpit/$1412e186e2cf2ae185961bb86a5b10f32b768d0afa96de22f62c80b99fb5868d/shell/index.js","lineNumber":63,"columnNumber":75839},{"functionName":"n","scriptId":"21","url":"http://127.0.0.2:9191/cockpit/$1412e186e2cf2ae185961bb86a5b10f32b768d0afa96de22f62c80b99fb5868d/shell/index.js","lineNumber":0,"columnNumber":109},{"functionName":"","scriptId":"21","url":"http://127.0.0.2:9191/cockpit/$1412e186e2cf2ae185961bb86a5b10f32b768d0afa96de22f62c80b99fb5868d/shell/index.js","lineNumber":33,"columnNumber":18487},{"functionName":"n","scriptId":"21","url":"http://127.0.0.2:9191/cockpit/$1412e186e2cf2ae185961bb86a5b10f32b768d0afa96de22f62c80b99fb5868d/shell/index.js","lineNumber":0,"columnNumber":109},{"functionName":"","scriptId":"21","url":"http://127.0.0.2:9191/cockpit/$1412e186e2cf2ae185961bb86a5b10f32b768d0afa96de22f62c80b99fb5868d/shell/index.js","lineNumber":0,"columnNumber":901},{"functionName":"","scriptId":"21","url":"http://127.0.0.2:9191/cockpit/$1412e186e2cf2ae185961bb86a5b10f32b768d0afa96de22f62c80b99fb5868d/shell/index.js","lineNumber":0,"columnNumber":912}]}}
+CDP: {"source":"network","level":"error","text":"Failed to load resource: the server responded with a status of 404 (Not Found)","timestamp":1616076951544.3489,"url":"http://127.0.0.2:9191/cockpit/$1412e186e2cf2ae185961bb86a5b10f32b768d0afa96de22f62c80b99fb5868d/starter-kit/po.js","networkRequestId":"2067.50"}
+CDP: {"source":"network","level":"error","text":"Failed to load resource: the server responded with a status of 404 (Not Found)","timestamp":1616076951552.688,"url":"http://127.0.0.2:9191/cockpit/$1412e186e2cf2ae185961bb86a5b10f32b768d0afa96de22f62c80b99fb5868d/starter-kit/po.js","networkRequestId":"2067.54"}
+R {'x': 240, 'y': 125, 'width': 1680, 'height': 79, 'scale': 1}
+Differences in pixel test TestApplication-testBasic-hostname-pixels.png
+R {'x': 240, 'y': 125, 'width': 1680, 'height': 79, 'scale': 1}
+Differences in pixel test TestApplication-testBasic-gastgebername-pixels.png
+> warning: transport closed: disconnected
+Traceback (most recent call last):
+  File "/work/bots/make-checkout-workdir/test/common/testlib.py", line 1036, in tearDown
+    self.check_pixel_tests()
+  File "/work/bots/make-checkout-workdir/test/common/testlib.py", line 1251, in check_pixel_tests
+    raise Error("Some pixel tests have failed")
+testlib.Error: Some pixel tests have failed
+
+# Result testBasic (__main__.TestApplication) failed
+# 1 TEST FAILED [25s on 1-cockpit-11]
+not ok 1 /work/bots/make-checkout-workdir/test/check-application TestApplication.testBasic [ND@1]
+
+# 1 TESTS FAILED [29s on 1-cockpit-11, 1 serial tests: 0: 0s, 1: 26s]
+make: *** [Makefile:136: check] Error 1
+Test run finished, return code: 2
+
