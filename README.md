@@ -42,7 +42,7 @@ will be ignored during comparison.
 
 Here is a PR that adds two pixel test points to the starter-kit:
 
-    https://github.com/cockpit-project/starter-kit/pull/436
+  [starter-kit#436](https://github.com/cockpit-project/starter-kit/pull/436)
 
 ## Debugging a failed pixel test
 
@@ -53,12 +53,12 @@ for directly seeing what has changed.
 Our CI machinery can not yet produce such a test results directory, so
 here is a fake one:
 
-    https://mvollmer.github.io/pixel-test-log-demo/log.html
+  [log.html](https://mvollmer.github.io/pixel-test-log-demo/log.html)
 
 It's a copy of the test results for this PR, with a new version of
 log.html and the new pixeldiff.html file:
 
-    https://github.com/cockpit-project/starter-kit/pull/435
+  [starter-kit#435](https://github.com/cockpit-project/starter-kit/pull/435)
 
 As you can see, it has "pixels" links in the same place as the well
 known "screenshot" links.  Clicking on it gets you to a page where you
@@ -93,7 +93,7 @@ change it if necessary.
 Here is a second version of the starter-kit pull request from the
 previous section:
 
-    XXX
+  [starter-kit#438](https://github.com/cockpit-project/starter-kit/pull/438)
 
 It has the same code changes, but now the reference images have been
 updated as well, since the change in color was of course intended.
