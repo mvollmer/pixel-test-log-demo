@@ -105,9 +105,12 @@ button to see the image diff.
 
 ## Open issues
 
-- Should the reference images be called *-reference.png instead of
-  *-pixels.png?  That would help log.html not get confused by new
-  references as opposed to failed tests.
-
 - When the size of the image changes, things crash when copying over
   the alpha channel.
+
+- Should the reference images be called *-reference.png instead of
+  *-pixels.png?  That would help log.html not get confused by new
+  references as opposed to failed tests, but updating reference images
+  is more tricky then (since the files change names). Hmm.
+
+- The update-reference-pixels script needs some love.
