@@ -578,7 +578,10 @@ $(function () {
         $(diff).append(
             $("<div class=pixelcompare data-pixelcompare>").append(img_ref, img_now));
         window.setup_pixelcompare();
-        $('#delta').append(img_delta);
+        var delta = $('#delta')[0];
+        delta.style.width = img_now[0].naturalWidth + "px";
+        delta.style.height = img_now[0].naturalHeight + "px";
+        $(delta).append(img_delta);
     });
 });
         </script>
