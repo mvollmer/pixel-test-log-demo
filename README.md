@@ -114,3 +114,6 @@ button to see the image diff.
   is more tricky then (since the files change names). Hmm.
 
 - The update-reference-pixels script needs some love.
+
+- Need to say something about random glyph changes, and how deal with
+  those.
