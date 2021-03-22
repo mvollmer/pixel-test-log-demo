@@ -15,7 +15,7 @@ function of the Browser class:
 
 The first argument is a CSS selector that identifies the part of the
 UI that you want to compare.  The screenshot will only include that
-element.  The secon argument is a arbitrary but unique key for this
+element.  The second argument is an arbitrary but unique key for this
 test point.  It is used to name the files that go with it.
 
 For each such call, there needs to be a reference image in the
