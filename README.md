@@ -50,13 +50,8 @@ When making changes that change how the UI looks, some pixel tests
 will fail.  The test results will contain the new pixels, and means
 for directly seeing what has changed.
 
-Our CI machinery can not yet produce such a test results directory, so
-here is a fake one:
-
-  [log.html](https://mvollmer.github.io/pixel-test-log-demo/log.html)
-
-It's a copy of the test results for this PR, with a new version of
-log.html and the new pixeldiff.html file:
+Here is a PR that makes the two pixel tests fail that had been added
+in#436:
 
   [starter-kit#435](https://github.com/cockpit-project/starter-kit/pull/435)
 
@@ -81,7 +76,7 @@ TestFoo-testBasic-pixels.png that was written by the failed test run,
 move it into test/reference, and commit it.  A local test run has
 dropped it into the current directory, for a remote run it will be in
 the test results directory.  (The update-reference-pixels script is
-intended to help, but need more love first...)
+intended to help, but needs more love first...)
 
 When a test writes a new Foo-pixels.png file for a failed test, it
 will have the alpha channel of the old reference copied into it.  That
@@ -98,10 +93,30 @@ previous section:
 It has the same code changes, but now the reference images have been
 updated as well, since the change in color was of course intended.
 
-Now this PR needs to be reviewed, and the changed looks need to be
+Now this PR needs to be reviewed, and the changed visuals need to be
 approved.  Github can do image comparisons, so we will use that to
 review changes to the reference images.  Click on the "Show rich diff"
 button to see the image diff.
+
+## Randomness
+
+Some parts of the UI will change from one run to the next although the
+code has not.  For example, if the UI displays the current time, or
+the PID of some process, those values will potentially be different on
+every run.  The idea is that we battle these things individually, as
+they come up.  Maybe we ignore parts of the UI (by making the
+reference image transparent in those areas), or maybe we can remove
+the randomness in the test itself (by setting the time and date to a
+specific value).
+
+But there is at least one aspect where the browser itself adds
+randomness: How a font glyph is rendered can change from one run to
+the next, i.e., on one run all "S" characters look the same, and on
+the next run, they still look all the same, but different from the
+previous run.  The changes are small, of course, since it's still the
+letter "S" from the same font at the same size.  Here the idea is to
+tweak the image comparision algorithm to ignore this.  (Small changes
+in intensity are allowed, but any change in color is rejected.)
 
 ## Open issues
 
@@ -109,6 +124,3 @@ button to see the image diff.
   the alpha channel.
 
 - The update-reference-pixels script needs some love.
-
-- Need to say something about random glyph changes, and how we deal
-  with those.
