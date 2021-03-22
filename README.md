@@ -120,7 +120,4 @@ in intensity are allowed, but any change in color is rejected.)
 
 ## Open issues
 
-- When the size of the image changes, things crash when copying over
-  the alpha channel.
-
 - The update-reference-pixels script needs some love.
