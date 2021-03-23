@@ -1,5 +1,5 @@
 The Cockpit integration tests might soon be able to contain "pixel
-tests".  Such a test will take a screenshot with the Browser and
+tests".  Such a test will take a screenshot with the browser and
 compare it with a reference.  The idea is that we can catch visual
 regressions much easier this way than if we would hunt for them in a
 purely manual fashion.
@@ -30,28 +30,28 @@ the current directory.  Just move it into test/reference/ and commit
 it.  The next run of the test should be green.
 
 When you run the tests in the CI machinery, you need to download the
-new reference images when the test results directory.  There is a
-script that can help with that.  (In
-cockpit/test/common/update-reference-pixels, but it's very rough
-still.)
+new reference images from the test results directory.  They show up as
+regular screenshots.
 
 If there are parts of the reference image that you want to ignore, you
 can change the transparency (alpha channel) of those parts in the
 image itself (with the GIMP, say).  Any pixel that is not fully opaque
 will be ignored during comparison.
 
-Here is a PR that adds two pixel test points to the starter-kit:
+Here is a PR that adds two pixel test points to the starter-kit,
+complete with reference images:
 
   [starter-kit#436](https://github.com/cockpit-project/starter-kit/pull/436)
 
 ## Debugging a failed pixel test
 
 When making changes that change how the UI looks, some pixel tests
-will fail.  The test results will contain the new pixels, and means
-for directly seeing what has changed.
+will fail.  The test results will contain the new pixels, and you can
+compare them with the referene image right in the browser when looking
+at the test logs.
 
 Here is a PR that makes the two pixel tests fail that had been added
-in#436:
+in #436:
 
   [starter-kit#435](https://github.com/cockpit-project/starter-kit/pull/435)
 
@@ -67,21 +67,19 @@ you need to fix your code and try again, of course.
 
 ## Updating a pixel test
 
-If you make a change that intentionally changes how Cockpit looks (and
-most changes are like that, I'd say), you need to install new
-reference images in test/reference/.
+If you make a change that intentionally changes how Cockpit looks, you
+need to install new reference images in test/reference/.
 
 This is very similar to adding a new pixel test point.  Take the
 TestFoo-testBasic-pixels.png that was written by the failed test run,
 move it into test/reference, and commit it.  A local test run has
 dropped it into the current directory, for a remote run it will be in
-the test results directory.  (The update-reference-pixels script is
-intended to help, but needs more love first...)
+the test results directory and the pixel comparison view has a link to
+it.
 
 When a test writes a new Foo-pixels.png file for a failed test, it
 will have the alpha channel of the old reference copied into it.  That
-makes it easy to keep ignoring the same parts, but you can of course
-change it if necessary.
+makes it easy to keep ignoring the same parts.
 
 ## Reviewing a changed pixel test
 
@@ -120,5 +118,5 @@ in intensity are allowed, but any change in color is rejected.)
 
 ## Open issues
 
-- The new update-reference-pixels script, pixeldiff.html, and log.html
-  need some love.
+- The pixel comparison view (pixeldiff.html) could be improved, I
+  guess.
