@@ -122,6 +122,3 @@ in intensity are allowed, but any change in color is rejected.)
 
 - The new update-reference-pixels script, pixeldiff.html, and log.html
   need some love.
-
-- The pixel comparison machinery test results don't make sense for new
-  references, probably.
