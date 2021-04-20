@@ -55,9 +55,9 @@ in #436:
 
   [starter-kit#435](https://github.com/cockpit-project/starter-kit/pull/435)
 
-As you can see, it has "pixels" links in the same place as the well
-known "screenshot" links.  Clicking on it gets you to a page where you
-can directly compare the previous and current UI.
+As you can see, it has "Changed pixels" links in the same place as the
+well known "screenshot" links.  Clicking on it gets you to a page
+where you can directly compare the previous and current UI.
 
 As the author of the pull request, you can decide from there whether
 these changes are intended or not.
@@ -92,9 +92,15 @@ It has the same code changes, but now the reference images have been
 updated as well, since the change in color was of course intended.
 
 Now this PR needs to be reviewed, and the changed visuals need to be
-approved.  Github can do image comparisons, so we will use that to
-review changes to the reference images.  Click on the "Show rich diff"
-button to see the image diff.
+approved.  The CI machinery has prepared a page where you can compare
+the old and new reference images.  It can be found by clicking on the
+"Details" link for the "pixeldiffs" check.
+
+[ The reason why we don't use Githubs own image diffing is that we
+  ultimately don't want to store the reference images in the main
+  repositorium, nor do we want to use git lfs.  Thus, github will
+  ultimately not be able to diff them.
+]
 
 ## Randomness
 
@@ -120,3 +126,12 @@ in intensity are allowed, but any change in color is rejected.)
 
 - The pixel comparison view (pixeldiff.html) could be improved, I
   guess.
+
+- The page for reviewing proposed changes to reference images looks
+  too much like a test run.  This is an artifact of the hackish way it
+  is produced right now.  It should look very different.
+
+- The page for reviewing proposed changes to reference images is hard
+  to find and it's probably easy to forgot about reviewing them.
+  Maybe we should add a comment every time such as page has been
+  produced?
