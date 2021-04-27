@@ -12,15 +12,15 @@ important and play the biggest role.
 
 A large part of dealing with pixel tests will consequently consist of
 maintaining the reference images.  At the same time, we don't want to
-clog up our main source repository with them.  While the numer and
+clog up our main source repository with them.  While the number and
 size of the reference images at any one point in time should not pose
 a problem, we will over time accumulate a history of them that we are
 afraid would dominate the source repository.
 
 Thus, the reference images are not stored in the source reposirory.
 Instead, we store them in a submodule-kind-of external repository.
-That external repository doesn't keep any history can be aggressively
-pruned.
+That external repository doesn't keep any history and can be
+aggressively pruned.
 
 The details of this storage repository are not nailed down yet.  It
 might be a actual submodule with some sugar on top, or it might be
