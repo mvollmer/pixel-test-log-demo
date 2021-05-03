@@ -17,25 +17,28 @@ size of the reference images at any one point in time should not pose
 a problem, we will over time accumulate a history of them that we are
 afraid would dominate the source repository.
 
-Thus, the reference images are not stored in the source reposirory.
-Instead, we store them in a submodule-kind-of external repository.
-That external repository doesn't keep any history and can be
-aggressively pruned.
+Thus, the reference images are not stored in the source repository.
+Instead, we store them in a external repository that is linked into
+the source repository as a submodule.  That external repository
+doesn't keep any history and can be aggressively pruned.
 
-The details of this storage repository are not nailed down yet.  It
-might be a actual submodule with some sugar on top, or it might be
-something eerily similar to a submodule.  In any case, the idea is
-that developers are isolated from it via the new
-`test/common/pixel-tests` tool.
+Developers are mostly isolated from this via the new
+`test/common/pixel-tests` tool.  But if you are familiar with git
+submodules, there should be no suprises for you here.  (Except maybe
+that we don't keep history in the storage repo, and most commits in it
+thus don't have a parent.)
 
-That tool isn't nailed down yet, either.  But it's good enough to get
-some real work done with it, and gain the experience necessary to
-improve it.
+A source repository needs to be prepared before it can store reference
+images in a external storage repository. You can let the tool do it by
+running
 
-In any case, a source repository needs to be prepared before it can
-store reference images in a external storage repository.  The tool
-will be able to do that, but right now it is still a manual process.
-Please ask on IRC for help.
+```
+./test/common/pixel-tests init
+```
+
+and the committing the changes it has done to the source repository.
+(Those changes will be a new or modified .gitmodules file, and a new
+gitlink at test/reference.)
 
 ## Adding a pixel test
 
@@ -94,6 +97,13 @@ This `push` command will record a change to `test/reference` in the
 main repository, and you need to commit this change.  This is how the
 main repository specifies which reference images to use exactly for
 each of its commits.
+
+If you want to see what changes would be pushed without actually
+pushing them, you can run this:
+
+```
+$ ./test/common/pixel-tests status
+```
 
 Here is a PR that adds two pixel test points to the starter-kit,
 complete with reference images:
